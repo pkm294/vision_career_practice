@@ -1,7 +1,7 @@
 from pathlib import Path
 import pandas as pd
 
-raw_dir = Path('data/raw')
+raw_dir = Path('../data/raw')
 image_paths = sorted(raw_dir.glob('*.jpg'))
 print(f'총 이미지 수: {len(image_paths)}')
 
@@ -26,6 +26,5 @@ for p in image_paths:
 
 df = pd.DataFrame(records)
 print(df.head())
-print('
-조명별 개수')
+print('조명별 개수')
 print(df['lighting'].value_counts())
