@@ -1,6 +1,12 @@
 import pandas as pd
+from pathlib import Path
 
-df = pd.read_csv('../data/metadata.csv')
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# raw_dir = Path('../data/raw')
+raw_dir = BASE_DIR / 'data' / 'metadata.csv'
+df = pd.read_csv(raw_dir)
 print('전체 행 수:', len(df))
 print('양품/불량 분포')
 print(df['quality_status'].value_counts())

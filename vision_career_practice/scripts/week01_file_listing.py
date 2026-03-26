@@ -1,7 +1,11 @@
 from pathlib import Path
 import pandas as pd
 
-raw_dir = Path('../data/raw')
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# raw_dir = Path('../data/raw')
+raw_dir = BASE_DIR / 'data' / 'raw'
 image_paths = sorted(raw_dir.glob('*.jpg'))
 print(f'총 이미지 수: {len(image_paths)}')
 
